@@ -1,4 +1,4 @@
-// page.js
+// ~/src/app/page.js
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
