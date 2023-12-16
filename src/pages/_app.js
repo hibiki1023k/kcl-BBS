@@ -5,7 +5,7 @@ import Modal from '../components/Modal';
 import { initializeApp } from 'firebase/app';
 import firebaseConfig from '../../firebaseConfig';
 
-function App() {
+function App({ Component, pageProps }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const app = initializeApp(firebaseConfig);
@@ -24,8 +24,9 @@ function App() {
 
     return (
         <div className="App">
-            <Header onOpenModal={handleOpenModal} />
-            {isModalOpen && <Modal closeModal={handleCloseModal} />}
+            {/* <Header onOpenModal={handleOpenModal} />
+            {isModalOpen && <Modal closeModal={handleCloseModal} />} */}
+            <Component {...pageProps} />
         </div>
     );
 }
