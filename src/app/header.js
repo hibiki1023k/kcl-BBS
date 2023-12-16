@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = () => {
   return (
-    <header className="sticky top-0 border-b z-10 bg-white">
-      <div className="max-w-4xl mx-auto flex justify-between items-center h-12">
+    <header className="sticky-top border-bottom bg-white">
+      <div className="container-fluid d-flex justify-content-between align-items-center">
         <Link href="/">
-          LOGO
+          Home
         </Link>
         <div>Link</div>
       </div>

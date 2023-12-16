@@ -1,12 +1,15 @@
-import Header from './header';
-import Footer from './footer';
+"use client";
+import React, { useState } from 'react';
+import Sidebar from './sidebar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Layout({ children }) {
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-1 max-w-4xl w-full mx-auto">{children}</main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="container">
+            <div className="centent-area">
+                <Sidebar />
+                <main>{children}</main>
+            </div>
+        </div>
+    );
 }
