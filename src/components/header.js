@@ -1,4 +1,4 @@
-// ~/src/app/header.js
+// ~/src/components/header.js
 import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';

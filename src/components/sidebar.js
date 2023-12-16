@@ -1,3 +1,4 @@
+// ~/src/components/sidebar.js
 import React, { useRef, useState, useEffect } from 'react';
 import { BsCalendar2EventFill, BsTwitterX, BsCompassFill, BsFillPersonPlusFill } from "react-icons/bs";
 

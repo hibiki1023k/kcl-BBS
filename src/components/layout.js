@@ -1,4 +1,4 @@
-// ~/src/app/layout.js
+// ~/src/components/layout.js
 "use client";
 import React, { useState } from 'react';
 import Header from './header';

@@ -1,4 +1,4 @@
-// ~/src/app/_app.js
+// ~/src/pages/_app.js
 import React, { useState } from 'react';
 import Header from '../components/header'
 import Modal from '../components/Modal';

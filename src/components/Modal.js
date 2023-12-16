@@ -1,4 +1,4 @@
-// ~/src/app/Modal.js
+// ~/src/components/Modal.js
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { marked } from 'marked';

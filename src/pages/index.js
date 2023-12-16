@@ -1,4 +1,4 @@
-// ~/src/app/page.js
+// ~/src/pages/index.js
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/header";
@@ -18,11 +18,12 @@ export default function Home() {
             })
             .then((data) => {
                 setPosts(data);
+                console.log(posts);
             })
             .catch((error) => {
                 console.error("Error fetching posts:",error);
             });
-    });
+    }, [posts]);
 
     const handleOpenModal = () => {
         setIsModalOpen(true);
@@ -43,8 +44,7 @@ export default function Home() {
             {/* 投稿を表示 */}
             {posts.map((post, index) => (
                 <div key={index}>
-                <h3>{post.title}</h3>
-                <p>{post.content}</p>
+                    <p>{post}</p>
                 </div>
             ))}
     </>
