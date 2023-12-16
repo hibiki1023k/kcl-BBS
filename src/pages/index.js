@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/header";
 import Modal from "../components/Modal";
-import marked from "marked";
+import { Remarkable } from "remarkable";
 
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [posts, setPosts] = useState([
-        {content: "これは最初のテスト投稿です。"},
+        {content: "### test"},
         {content: "これは2番目のテスト投稿です。"}
     ]);
 
@@ -42,18 +42,22 @@ export default function Home() {
     // };
     console.log(posts);
 
-    {posts.map((post, index) => {
-        // 各投稿に対して marked で HTML を生成
-        const htmlContent = marked.parse(post.content);
-        console.log(htmlContent);
-    
-        return (
-            <div key={index} className="card mb-3">
-                <div className="card-body">
-                    {/* htmlContent を dangerouslySetInnerHTML で使用 */}
-                    <div className="card-text" dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
-                </div>
-            </div>
+    const md = new Remarkable();
+    return (
+        <>
+            {posts.map((post, index) => {
+                let htmlContent = md.render(post.content);
+                console.log(htmlContent);
+            
+                return (
+                    <div key={index} className="card mb-3">
+                        <div className="card-body">
+                            {/* htmlContent を dangerouslySetInnerHTML で使用 */}
+                            <div className="card-text" dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
+                        </div>
+                    </div>
+                    );
+                })}
+            </>
         );
-    })}
-}
+    }
