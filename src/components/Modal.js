@@ -3,19 +3,26 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
+import { app } from '../pages/_app';
+import { getDatabase, ref, push, set } from "firebase/database";
 
 function Modal({ closeModal }) {
     const [text, setText] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [preview, setPerview] = useState('');
 
+    const database = getDatabase();
+    const postRef = ref(database, 'posts');
+
     useEffect(() => {
         setShowModal(true);
     }, []);
 
     const handleSubmit = () => {
+        const post = text;
         console.log('submit:', text);
         // Todo: サーバーにデータ追加
+        submitPost(post);
         setShowModal(false);
         closeModal();
     };
@@ -30,6 +37,19 @@ function Modal({ closeModal }) {
         setText(markdownText);
         setPerview(DOMPurify.sanitize(marked(markdownText)));
     }
+
+    const submitPost = (post) => {
+        console.log(postRef);
+        const newPostRef = push(ref(database, 'posts'), post);
+
+        set(newPostRef, post)
+            .then(() => {
+                console.log('Success');
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 
     return (
         <>

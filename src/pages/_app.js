@@ -2,9 +2,13 @@
 import React, { useState } from 'react';
 import Header from '../components/header'
 import Modal from '../components/Modal';
+import { initializeApp } from 'firebase/app';
+import firebaseConfig from '../../firebaseConfig';
 
 function App() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const app = initializeApp(firebaseConfig);
 
     const handleOpenModal = () => {
         setIsModalOpen(true);
