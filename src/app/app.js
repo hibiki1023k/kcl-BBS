@@ -1,12 +1,25 @@
-import Layout from '../components/layout';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// app.js
+import React, { useState } from 'react';
+import Header from './header';
+import Modal from './Modal';
 
-function MyApp({ Component, pageProps }) {
+function App() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    }
+
     return (
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
+        <>
+            <Header onOpenModal={handleOpenModal} />
+            {isModalOpen && <Modal onClose={handleCloseModal} />}
+        </>
     );
 }
 
-export default MyApp;
+export default App;

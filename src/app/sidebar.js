@@ -31,36 +31,36 @@ function Sidebar() {
             padding: '15px', 
             width: '250px',
         }}>
-            <div style={{
-                marginTop: '20px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                width: '100%',
-            }}>
-                <a href="/" rel="noopener noreferrer">
-                    <BsCalendar2EventFill />
-                </a>
-                <a 
-                href="https://twitter.com/Career_Kyutech" 
-                target='_blank'
-                rel="noopener noreferrer"
-                >
-                    <BsTwitterX />
-                </a>
-                <a 
-                href="https://www.kyutech.ac.jp/career/kcl.html" 
-                target='_blank'
-                rel="noopener noreferrer"
-                >
-                    <BsCompassFill />
-                </a>
-                <a 
-                href="https://forms.office.com/pages/responsepage.aspx?id=qYb528fyAUeIzkY97HbLpB-zKEplxShPoixnaC14gZxURUZXQjRFSDFIWEhPNEVGNEtRU1RNUkhFSi4u" 
-                target='_blank'
-                rel="noopener noreferrer"
-                >
-                    <BsFillPersonPlusFill />
-                </a>
+            <div class='container'>
+                <div class='row'>
+                    <a href="/" rel="noopener noreferrer" class="col-3">
+                        <BsCalendar2EventFill />
+                    </a>
+                    <a 
+                    href="https://twitter.com/Career_Kyutech" 
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    class="col-3"
+                    >
+                        <BsTwitterX />
+                    </a>
+                    <a 
+                    href="https://www.kyutech.ac.jp/career/kcl.html" 
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    class="col-3"
+                    >
+                        <BsCompassFill />
+                    </a>
+                    <a 
+                    href="https://forms.office.com/pages/responsepage.aspx?id=qYb528fyAUeIzkY97HbLpB-zKEplxShPoixnaC14gZxURUZXQjRFSDFIWEhPNEVGNEtRU1RNUkhFSi4u" 
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    class="col-3"
+                    >
+                        <BsFillPersonPlusFill />
+                    </a>
+                </div>
             </div>
             <div style={{
                 marginTop: '20px',
