@@ -32,8 +32,8 @@ export default function Home() {
     return (
         <>
             {posts.map((post, index) => (
-                <div key={index} className="card mb-3">
-                    <div className="card-body">
+                <div key={index} className="card mb-2">
+                    <div className="card-body ">
                         <div className="card-text" dangerouslySetInnerHTML={{ __html: post.content }}></div>
                     </div>
                 </div>
