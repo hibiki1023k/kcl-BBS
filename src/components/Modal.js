@@ -11,7 +11,7 @@ function Modal({ closeModal }) {
     const [showModal, setShowModal] = useState(false);
     const [preview, setPerview] = useState('');
 
-    const database = getDatabase(app);
+    const database = getDatabase();
     const postRef = ref(database, 'posts');
 
     useEffect(() => {
