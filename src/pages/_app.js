@@ -24,8 +24,8 @@ function App({ Component, pageProps }) {
 
     return (
         <div className="App">
-            {/* <Header onOpenModal={handleOpenModal} />
-            {isModalOpen && <Modal closeModal={handleCloseModal} />} */}
+            <Header onOpenModal={handleOpenModal} />
+            {isModalOpen && <Modal closeModal={handleCloseModal} />}
             <Component {...pageProps} />
         </div>
     );
