@@ -9,7 +9,7 @@ import { getDatabase, ref, push, set } from "firebase/database";
 function Modal({ closeModal }) {
     const [text, setText] = useState('');
     const [showModal, setShowModal] = useState(false);
-    const [preview, setPerview] = useState('');
+    const [preview, setPreview] = useState('');
 
     const database = getDatabase();
     const postRef = ref(database, 'posts');
@@ -35,7 +35,7 @@ function Modal({ closeModal }) {
     const handleChange = (e) => {
         const markdownText = e.target.value;
         setText(markdownText);
-        setPerview(DOMPurify.sanitize(marked(markdownText)));
+        setPreview(DOMPurify.sanitize(marked(markdownText)));
     }
 
     const submitPost = (post) => {
