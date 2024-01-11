@@ -50,6 +50,6 @@ async function processSlackMessages(channelId, botToken) {
 }
 
 // SlackチャンネルIDとトークンを指定して処理を開始
-const channelId = 'C03LM0GEDMW';
-const botToken = 'xoxb-3625066142738-6357167721586-cuAA6luMrc9eKRq1GqST5bch';
+const channelId = process.env.SLACK_CHANNEL;
+const botToken = process.env.SLACK_BOT_TOKEN;
 processSlackMessages(channelId, botToken);

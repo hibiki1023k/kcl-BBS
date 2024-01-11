@@ -42,8 +42,8 @@ function renderFullCalendar(channelId, botToken) {
 export default function CalendarPage() {
   useEffect(() => {
     // FullCalendarをレンダリングする関数を実行
-    const channelId = 'C03LM0GEDMW'; // SlackチャンネルIDを指定
-    const botToken = 'xoxb-3625066142738-6357167721586-cuAA6luMrc9eKRq1GqST5bch'; // Slackボットのトークンを指定
+    const channelId = process.env.SLACK_CHANNEL; // SlackチャンネルIDを指定
+    const botToken = process.env.SLACK_BOT_TOKEN; // Slackボットのトークンを指定
     renderFullCalendar(channelId, botToken);
   }, []);
 
