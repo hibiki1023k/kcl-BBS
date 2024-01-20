@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
 // Slackからメッセージを取得する関数
 async function getSlackMessages(channelId, botToken) {
@@ -8,21 +8,24 @@ async function getSlackMessages(channelId, botToken) {
         channel: channelId,
         token: botToken,
       },
-    });
+    })
 
     if (response.data.ok) {
-      const messages = response.data.messages;
+      const messages = response.data.messages
       const messageTexts = messages
-        .filter((message) => message.type === 'message' && message.subtype !== 'bot_message')
-        .map((message) => message.text);
+        .filter(
+          (message) =>
+            message.type === 'message' && message.subtype !== 'bot_message',
+        )
+        .map((message) => message.text)
 
-      return messageTexts;
+      return messageTexts
     } else {
-      throw new Error(response.data.error);
+      throw new Error(response.data.error)
     }
   } catch (error) {
-    console.error('Error retrieving Slack messages:', error);
-    return [];
+    console.error('Error retrieving Slack messages:', error)
+    return []
   }
 }
 
@@ -30,9 +33,7 @@ async function getSlackMessages(channelId, botToken) {
 async function extractDateTimeUsingGPT(messages) {
   // OpenAI APIを使用してGPTを呼び出す
   // ここでmessagesをOpenAIに送信して、日付や時間を含むテキストを取得
-
   // 取得したテキストを解析し、日付と時間を抽出する処理を実装
-
   // 抽出した日付と時間を適切に処理する（FullCalendarに追加するなど）
 }
 
@@ -40,16 +41,16 @@ async function extractDateTimeUsingGPT(messages) {
 async function processSlackMessages(channelId, botToken) {
   try {
     // Slackからメッセージを取得
-    const messages = await getSlackMessages(channelId, botToken);
+    const messages = await getSlackMessages(channelId, botToken)
 
     // OpenAIのGPTを利用して日付と時間を抽出
-    await extractDateTimeUsingGPT(messages);
+    await extractDateTimeUsingGPT(messages)
   } catch (error) {
-    console.error('Error processing Slack messages:', error);
+    console.error('Error processing Slack messages:', error)
   }
 }
 
 // SlackチャンネルIDとトークンを指定して処理を開始
-const channelId = process.env.SLACK_CHANNEL;
-const botToken = process.env.SLACK_BOT_TOKEN;
-processSlackMessages(channelId, botToken);
+const channelId = process.env.SLACK_CHANNEL
+const botToken = process.env.SLACK_BOT_TOKEN
+processSlackMessages(channelId, botToken)
