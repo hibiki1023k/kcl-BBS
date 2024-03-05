@@ -1,9 +1,9 @@
 # pnpm
 1. まずnpmとnodeのがインストールされていることを確認する。
-	```shell
+```shell
 npm --version
 node -v
-	```
+```
 1. pnpmをインストールする。
 ```shell
 npm i -g pnpm
@@ -61,7 +61,7 @@ const testEvents = [ // 挿入データ
 ```
 # shadcn/ui
 shadcn/ui公式ページ(https://ui.shadcn.com/docs/components/accordion) > Componentsからボタンなどのフォーマットを逐次インストール、使用できる
-Themesなどで統一した色テーマを変更することができる
+Themesなどで統一した色テーマを変更することができる  
 ex) Buttonをpnpmでインストールして使用する
 ```shell
 pnpm dlx shadcn-ui@latest add button
