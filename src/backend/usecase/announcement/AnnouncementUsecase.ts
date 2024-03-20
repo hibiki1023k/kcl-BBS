@@ -35,7 +35,10 @@ const dummyUsecase = (): AnnouncementUsecase => {
     getAnnouncement: () => Promise.resolve(new Success(dummyAnnouncement)),
     updateAnnouncement: () => Promise.resolve(new Success(dummyAnnouncement)),
     deleteAnnouncement: () => Promise.resolve(new Success(true)),
-    listAnnouncements: () => Promise.resolve(new Success([dummyAnnouncement])),
+    listAnnouncements: () =>
+      Promise.resolve(
+        new Success([dummyAnnouncement, dummyAnnouncement, dummyAnnouncement]),
+      ),
   }
 }
 

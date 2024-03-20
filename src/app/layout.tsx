@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import { ReactNode } from 'react'
 import './global.css'
+import { NavWrapper } from '@/components/layout/NavWrapper'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -19,10 +20,10 @@ export default function RootLayout({ children }: Props) {
       <body className={cn(fontSans.variable)}>
         <ThemeProvider
           attribute="class"
-          forcedTheme="light"
+          defaultTheme="light"
           disableTransitionOnChange
         >
-          <div>{children}</div>
+          <NavWrapper>{children}</NavWrapper>
         </ThemeProvider>
       </body>
     </html>

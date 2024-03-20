@@ -25,5 +25,5 @@ export interface AnnouncementRepository {
     _id: string,
   ): Promise<Result<true, NotFoundError | InvalidDataError | Error>>
 
-  listAnnouncements(): Promise<Result<Announcement[], Error>>
+  listAnnouncements(_page: number): Promise<Result<Announcement[], Error>>
 }
